@@ -1,4 +1,4 @@
-# Ejercicio N°6 - Trabajo Práctico N°5
+# Ejercicio N°3 - Trabajo Práctico N°5
 En este trabajo práctico realizamos diferentes ejercicios para aprender algunos conceptos básicos del lenguaje JavaScript.
 Se resolvió haciendo uso de los conceptos aprendidos previamente en Trabajo Prácticos anteriores y se integraron nuevos conocimientos:
 * DOM "Document Object Model"
