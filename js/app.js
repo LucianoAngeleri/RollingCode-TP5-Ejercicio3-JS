@@ -1,10 +1,20 @@
 let btnAñadir =document.getElementById("btnAñadir"),
-    inputTarea =document.getElementById("inputTarea"),
-    listaTareas = document.getElementById("listado");
-    
+inputTarea =document.getElementById("inputTarea"),
+listaTareas = document.getElementById("listado");
+
 let nombreTarea;
 let numeroTarea = 0;
 
+function añadirAdvertencia() {
+    if (listaTareas.children.length === 0) {
+        const advertencia = document.createElement("p");
+        advertencia.classList.add("lead", "text-danger", "text-center", "fs-2");
+        advertencia.textContent = "No hay ninguna tarea...";
+        listaTareas.appendChild(advertencia);
+    } else if (listaTareas.querySelector(".lead")) {
+        listaTareas.querySelector(".lead").remove();
+    }
+}
 function agregarTarea(nombreTarea){
     nombreTarea = inputTarea.value;
     if (nombreTarea === undefined || nombreTarea === null ||nombreTarea === "") {
@@ -24,6 +34,9 @@ function agregarTarea(nombreTarea){
     let btnEliminar = document.getElementById(`btnEliminar-${numeroTarea}`);
     btnEliminar.addEventListener("click",()=>{
         tarea.remove();
+        añadirAdvertencia();
     })
+    añadirAdvertencia();
 }
 btnAñadir.addEventListener("click",() => agregarTarea(nombreTarea))
+añadirAdvertencia();
